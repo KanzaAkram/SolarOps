@@ -36,61 +36,36 @@ import profileImage from "@/assets/avatar.svg";
 
 const navItems = [
   {
-    text: "Dashboard",
+    text: "User Manual",
     icon: <HomeOutlined />,
     path: "dashboard",
   },
   {
-    text: "Environment Monitoring",
+    text: "Site Suitability Recommendations",
     icon: null,
   },
   {
-    text: "Air Quality",
+    text: "Heatmap",
     icon: <AirOutlined />,
-    path: "airquality",
+    path: "heatmap",
   },
   {
-    text: "Weather",
-    icon: <CloudOutlined />,
-    path: "weather",
-  },
-  {
-    text: "CO2 Emissions",
-    icon: <Co2Outlined />,
-    path: "co2emissions",
-  },
-  {
-    text: "Traffic and Transportation",
+    text: "Solar Power Forecast",
     icon: null,
   },
   {
-    text: "Traffic Flow",
-    icon: <TrafficOutlined />,
-    path: "trafficflow",
-  },
-  // {
-  //   text: "Public Transport",
-  //   icon: <CommuteOutlined />,
-  //   path: "publictransport",
-  // },
-  {
-    text: "Parking Availability",
-    icon: <LocalParkingOutlined />,
-    path: "parkingavailability",
-  },
-  {
-    text: "Utilities and Energy",
-    icon: null,
-  },
-  {
-    text: "Energy Consumption",
+    text: "Power Generation Prediction",
     icon: <OfflineBoltOutlined />,
-    path: "energy-consumption",
+    path: "powerprediction",
   },
   {
-    text: "Water Usage",
-    icon: <WaterDropOutlined />,
-    path: "waterusage",
+    text: "Fault detection",
+    icon: null,
+  },
+  {
+    text: "Fault",
+    icon: <OfflineBoltOutlined />,
+    path: "fault",
   },
 ];
 
@@ -139,7 +114,7 @@ function Sidebar({
                   width="fit-content"
                 >
                   <Typography variant="h4" fontWeight="bold">
-                    Smart City Dashboard
+                    SolarOps Dashboard
                   </Typography>
                   {!isNonMobile && (
                     <IconButton

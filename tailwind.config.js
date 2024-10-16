@@ -7,6 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        "orange-custom": "#fd8a2b",
         color: {
           1: "#AC6AFF",
           2: "#FFC876",

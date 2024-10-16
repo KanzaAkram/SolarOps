@@ -1,7 +1,5 @@
-
-import { useLocation, useNavigate } from "react-router-dom"; // Import useNavigate
+import { useLocation, useNavigate } from "react-router-dom";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
-
 import { brainwave } from "../assets";
 import { navigation } from "../constants";
 import Button from "./Button";
@@ -10,8 +8,8 @@ import { HamburgerMenu } from "./design/Header";
 import { useState } from "react";
 
 const Header = () => {
-  const navigate = useNavigate(); // Initialize useNavigate
-  const pathname = useLocation();
+  const navigate = useNavigate();
+  const location = useLocation();
   const [openNavigation, setOpenNavigation] = useState(false);
 
   const toggleNavigation = () => {
@@ -26,24 +24,23 @@ const Header = () => {
 
   const handleClick = () => {
     if (!openNavigation) return;
-
     enablePageScroll();
     setOpenNavigation(false);
   };
 
-  // Add a function to handle sign-in button click
   const handleSignInClick = () => {
-    navigate("/dashboard"); // Redirect to dashboard
+    navigate("/dashboard");
   };
 
   return (
     <div
-      className={`fixed top-0 left-0 w-full z-50 border-b border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm ${
-        openNavigation ? "bg-n-8" : "bg-n-8/90 backdrop-blur-sm"
+      className={`fixed top-0 left-0 w-full z-50 border-b border-n-6 bg-n-8/90 backdrop-blur-sm ${
+        openNavigation ? "bg-n-8" : ""
       }`}
     >
       <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
-        <a className="block w-[12rem] xl:mr-8" href="#hero" flex items-center>
+        {/* Logo and Title */}
+        <a className="block w-[12rem] xl:mr-8 flex items-center" href="#hero">
           <img
             src={brainwave}
             width={190}
@@ -56,6 +53,7 @@ const Header = () => {
           </span>
         </a>
 
+        {/* Navigation Menu */}
         <nav
           className={`${
             openNavigation ? "flex" : "hidden"
@@ -70,7 +68,7 @@ const Header = () => {
                 className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
                   item.onlyMobile ? "lg:hidden" : ""
                 } px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold ${
-                  item.url === pathname.hash
+                  item.url === location.hash
                     ? "z-2 lg:text-n-1"
                     : "lg:text-n-1/50"
                 } lg:leading-5 lg:hover:text-n-1 xl:px-12`}
@@ -83,6 +81,7 @@ const Header = () => {
           <HamburgerMenu />
         </nav>
 
+        {/* Account Links */}
         <a
           href="#signup"
           className="button hidden mr-8 text-n-1/50 transition-colors hover:text-n-1 lg:block"
@@ -90,16 +89,13 @@ const Header = () => {
           New account
         </a>
 
-        {/* Update the Sign In button */}
+        {/* Sign In Button */}
         <Button className="hidden lg:flex" onClick={handleSignInClick}>
           Sign in
         </Button>
 
-        <Button
-          className="ml-auto lg:hidden"
-          px="px-3"
-          onClick={toggleNavigation}
-        >
+        {/* Hamburger Menu Button */}
+        <Button className="ml-auto lg:hidden" onClick={toggleNavigation}>
           <MenuSvg openNavigation={openNavigation} />
         </Button>
       </div>

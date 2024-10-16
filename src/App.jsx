@@ -1,33 +1,4 @@
-// import ButtonGradient from "./assets/svg/ButtonGradient";
-// import Benefits from "./components/Benefits";
-// import Collaboration from "./components/Collaboration";
-// import Footer from "./components/Footer";
-// import Header from "./components/Header";
-// import Hero from "./components/Hero";
-// import Pricing from "./components/Pricing";
-// import Roadmap from "./components/Roadmap";
-// import Services from "./components/Services";
 
-// const App = () => {
-//   return (
-//     <>
-//       <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
-//         <Header />
-//         <Hero />
-//         <Benefits />
-//         <Collaboration />
-//         <Services />
-//         <Pricing />
-//         <Roadmap />
-//         <Footer />
-//       </div>
-
-//       <ButtonGradient />
-//     </>
-//   );
-// };
-
-// export default App;
 
 import { useMemo } from "react";
 import { useSelector } from "react-redux";
@@ -49,21 +20,22 @@ import Collaboration from "./components/Collaboration";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import Pricing from "./components/Pricing";
-import Roadmap from "./components/Roadmap";
 import Services from "./components/Services";
 
 // Import dashboard components
 import Layout from "./scenes/Layout";
-import Dashboard from "./scenes/Dashboard";
-import AirQuality from "./scenes/AirQuality";
+import UserManual from "./scenes/UserManual";
 import Admin from "./scenes/Admin";
-import Weather from "./scenes/Weather";
-import CO2Emission from "./scenes/CO2Emission";
-import TrafficFlowMap from "./scenes/TrafficFlowMap";
-import WaterUsage from "./scenes/WaterUsage";
-import EnergyConsumption from "./scenes/EnergyConsumption";
-import ParkingAvailability from "./scenes/ParkingAvailability";
+// import Weather from "./scenes/PowerPrediction";
+// import CO2Emission from "./scenes/CO2Emission";
+// import TrafficFlowMap from "./scenes/Heatmap";
+// import WaterUsage from "./scenes/Fault";
+// import EnergyConsumption from "./scenes/EnergyConsumption";
+// import ParkingAvailability from "./scenes/ParkingAvailability";
+// import UserManual from "./scenes/UserManual";
+import Heatmap from "./scenes/Heatmap";
+import PowerPrediction from "./scenes/PowerPrediction";
+import Fault from "./scenes/Fault";
 
 // Landing page component
 const LandingPage = () => {
@@ -75,8 +47,6 @@ const LandingPage = () => {
         <Benefits />
         <Collaboration />
         <Services />
-        <Pricing />
-        <Roadmap />
         <Footer />
       </div>
       <ButtonGradient />
@@ -90,15 +60,11 @@ const router = createBrowserRouter(
     <>
       <Route path="/" element={<LandingPage />} />
       <Route element={<Layout />}>
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/airquality" element={<AirQuality />} />
-        <Route path="/weather" element={<Weather />} />
-        <Route path="/co2emissions" element={<CO2Emission />} />
-        <Route path="/trafficflow" element={<TrafficFlowMap />} />
-        <Route path="/waterusage" element={<WaterUsage />} />
+        <Route path="/dashboard" element={<UserManual />} />
+        <Route path="/heatmap" element={<Heatmap />} />
+        <Route path="/powerprediction" element={<PowerPrediction />} />
+        <Route path="/fault" element={<Fault />} />
         <Route path="/admin" element={<Admin />} />
-        <Route path="/energy-consumption" element={<EnergyConsumption />} />
-        <Route path="/parkingavailability" element={<ParkingAvailability />} />
       </Route>
     </>
   )

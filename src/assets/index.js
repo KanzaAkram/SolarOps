@@ -41,17 +41,17 @@ import service1 from "./services/service-1.png";
 import service2 from "./services/service-2.png";
 import service3 from "./services/service-3.png";
 
-import lines from "./pricing/lines.svg";
-import stars from "./pricing/stars.svg";
+// import lines from "./pricing/lines.svg";
+// import stars from "./pricing/stars.svg";
 
-import coins from "./roadmap/coins.png";
-import done from "./roadmap/done.svg";
-import hero from "./roadmap/hero.png";
-import roadmap1 from "./roadmap/image-1.png";
-import roadmap2 from "./roadmap/image-2.png";
-import roadmap3 from "./roadmap/image-3.png";
-import roadmap4 from "./roadmap/image-4.png";
-import undone from "./roadmap/undone.svg";
+// import coins from "./roadmap/coins.png";
+// import done from "./roadmap/done.svg";
+// import hero from "./roadmap/hero.png";
+// import roadmap1 from "./roadmap/image-1.png";
+// import roadmap2 from "./roadmap/image-2.png";
+// import roadmap3 from "./roadmap/image-3.png";
+// import roadmap4 from "./roadmap/image-4.png";
+// import undone from "./roadmap/undone.svg";
 
 import notification1 from "./notification/image-1.png";
 import notification2 from "./notification/image-2.png";
@@ -116,16 +116,16 @@ export {
   service1,
   service2,
   service3,
-  lines,
-  stars,
-  coins,
-  done,
-  hero,
-  roadmap1,
-  roadmap2,
-  roadmap3,
-  roadmap4,
-  undone,
+  // lines,
+  // stars,
+  // coins,
+  // done,
+  // hero,
+  // roadmap1,
+  // roadmap2,
+  // roadmap3,
+  // roadmap4,
+  // undone,
   notification1,
   notification2,
   notification3,
