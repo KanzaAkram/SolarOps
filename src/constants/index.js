@@ -39,11 +39,6 @@ export const navigation = [
     url: "#features",
   },
   {
-    id: "1",
-    title: "Pricing",
-    url: "#pricing",
-  },
-  {
     id: "2",
     title: "How to use",
     url: "#how-to-use",
@@ -66,14 +61,8 @@ export const heroIcons = [homeSmile, file02, searchMd, plusSquare];
 
 export const notificationImages = [notification4, notification3, notification2];
 
-export const companyLogos = [
-  // Sustainability,
-  // Optimization,
-  // Monitoring,
-  // Visualization,
-  // Recommendations,
-  yourlogo,
-];
+export const companyLogos = [];
+
 
 export const brainwaveServices = [
   "Photo generating",
@@ -168,94 +157,51 @@ export const collabApps = [
   },
 ];
 
-export const pricing = [
-  {
-    id: "0",
-    title: "Basic",
-    description: "AI chatbot, personalized recommendations",
-    price: "0",
-    features: [
-      "An AI chatbot that can understand your queries",
-      "Personalized recommendations based on your preferences",
-      "Ability to explore the app and its features without any cost",
-    ],
-  },
-  {
-    id: "1",
-    title: "Premium",
-    description: "Advanced AI chatbot, priority support, analytics dashboard",
-    price: "9.99",
-    features: [
-      "An advanced AI chatbot that can understand complex queries",
-      "An analytics dashboard to track your conversations",
-      "Priority support to solve issues quickly",
-    ],
-  },
-  {
-    id: "2",
-    title: "Enterprise",
-    description: "Custom AI chatbot, advanced analytics, dedicated account",
-    price: null,
-    features: [
-      "An AI chatbot that can understand your queries",
-      "Personalized recommendations based on your preferences",
-      "Ability to explore the app and its features without any cost",
-    ],
-  },
-];
-
 export const benefits = [
   {
     id: "0",
-    title: "Ask anything",
-    text: "Lets users quickly find answers to their questions without having to search through multiple sources.",
+    title: "Fault Detection",
+    text: "Spot Faults, Boost Performance: Upload, Detect, and Optimize with Confidence!",
     backgroundUrl: "./src/assets/benefits/card-1.svg",
-    iconUrl: benefitIcon1,
+    image: "./src/assets/benefits/image-1.jpeg", // replace this with the actual image path
     imageUrl: benefitImage2,
   },
   {
     id: "1",
-    title: "Improve everyday",
-    text: "The app uses natural language processing to understand user queries and provide accurate and relevant responses.",
+    title: "Site Suitability Recommendations",
+    text: "Find the Perfect Spot: Power Your Solar Setup with Precision Heatmaps!",
     backgroundUrl: "./src/assets/benefits/card-2.svg",
-    iconUrl: benefitIcon2,
-    imageUrl: benefitImage2,
+    image: "./src/assets/benefits/image-6.png", // replace this with the actual image path
     light: true,
+    imageUrl: benefitImage2,
   },
   {
     id: "2",
-    title: "Connect everywhere",
-    text: "Connect with the AI chatbot from anywhere, on any device, making it more accessible and convenient.",
+    title: "Solar Power Forecast",
+    text: "Predict the Sun's Power: Optimize Solar Output with Data-Driven Insights!",
     backgroundUrl: "./src/assets/benefits/card-3.svg",
-    iconUrl: benefitIcon3,
+    image: "./src/assets/benefits/image-3.jpeg", // replace this with the actual image path
     imageUrl: benefitImage2,
   },
   {
     id: "3",
-    title: "Fast responding",
-    text: "Lets users quickly find answers to their questions without having to search through multiple sources.",
+    title: "Solar Panel Installation and Management Manual",
+    text: "Maximize Solar Energy: Expert Tips for Seamless Installation and Management!",
     backgroundUrl: "./src/assets/benefits/card-4.svg",
-    iconUrl: benefitIcon4,
-    imageUrl: benefitImage2,
+    image: "./src/assets/benefits/image-4.jpeg", // replace this with the actual image path
     light: true,
+    imageUrl: benefitImage2,
   },
   {
     id: "4",
-    title: "Ask anything",
-    text: "Lets users quickly find answers to their questions without having to search through multiple sources.",
+    title: "Monitoring Tab",
+    text: "Track Solar Performance: Monitor, Manage, and Maximize Output with Ease!",
     backgroundUrl: "./src/assets/benefits/card-5.svg",
-    iconUrl: benefitIcon1,
-    imageUrl: benefitImage2,
-  },
-  {
-    id: "5",
-    title: "Improve everyday",
-    text: "The app uses natural language processing to understand user queries and provide accurate and relevant responses.",
-    backgroundUrl: "./src/assets/benefits/card-6.svg",
-    iconUrl: benefitIcon2,
+    image: "./src/assets/benefits/image-5.jpeg", // replace this with the actual image path
     imageUrl: benefitImage2,
   },
 ];
+
 
 export const socials = [
   {

@@ -17,17 +17,10 @@ import {
   SettingsOutlined,
   ChevronLeft,
   ChevronRightOutlined,
-  HomeOutlined,
-  DeleteOutlined,
-  WaterDropOutlined,
-  OfflineBoltOutlined,
-  AirOutlined,
-  LocalParkingOutlined,
-  CloudOutlined,
-  CommuteOutlined,
-  AdminPanelSettingsOutlined,
-  Co2Outlined,
-  TrafficOutlined,
+  PictureAsPdf,
+  LocationOn,
+  SolarPower,
+  ReportProblem,
 } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -37,7 +30,7 @@ import profileImage from "@/assets/avatar.svg";
 const navItems = [
   {
     text: "User Manual",
-    icon: <HomeOutlined />,
+    icon: <PictureAsPdf />,
     path: "dashboard",
   },
   {
@@ -46,7 +39,7 @@ const navItems = [
   },
   {
     text: "Heatmap",
-    icon: <AirOutlined />,
+    icon: <LocationOn />,
     path: "heatmap",
   },
   {
@@ -55,7 +48,7 @@ const navItems = [
   },
   {
     text: "Power Generation Prediction",
-    icon: <OfflineBoltOutlined />,
+    icon: <SolarPower />,
     path: "powerprediction",
   },
   {
@@ -64,7 +57,7 @@ const navItems = [
   },
   {
     text: "Fault",
-    icon: <OfflineBoltOutlined />,
+    icon: <ReportProblem />,
     path: "fault",
   },
 ];
