@@ -65,9 +65,9 @@ export const companyLogos = [];
 
 
 export const brainwaveServices = [
-  "Photo generating",
-  "Photo enhance",
-  "Seamless Integration",
+  "Power Generation Forecasting",
+  "Solar Energy Performance Monitoring",
+  "Adaptive Power Prediction",
 ];
 
 export const brainwaveServicesIcons = [
@@ -80,7 +80,7 @@ export const brainwaveServicesIcons = [
 
 
 export const collabText =
-  "With smart automation and top-notch security, it's the perfect solution for teams looking to work smarter.";
+  "Optimize solar grid placement with smart automation and real-time environmental analysis for maximum energy output.";
 
 export const collabContent = [
   {

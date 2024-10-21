@@ -5,10 +5,10 @@
   height: 83%;
   margin: 10px auto; /* Center the container */
   border-radius: 12px;
-  background-image: linear-gradient(108deg, #c46aa6 0%, #e99592 100%);
+  /* background-image: linear-gradient(108deg, #f8991c 0%, #161515 100%); */
   box-sizing: border-box;
   /* padding-top:5px; */
-  padding: 20px;
+  padding: 0px;
   overflow: hidden; /* Prevent scrolling if content exceeds the container */
 }
 

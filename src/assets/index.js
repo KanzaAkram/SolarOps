@@ -3,7 +3,7 @@ import check from "./check.svg";
 import brainwaveSymbol from "./brainwave-symbol.svg";
 import brainwaveWhiteSymbol from "./brainwave-symbol-white.svg";
 import play from "./play.svg";
-import gradient from "./gradient.png";
+// import gradient from "./gradient.png";
 import smallSphere from "./4-small.png";
 import grid from "./grid.png";
 import check2 from "./check-02.svg";
@@ -21,11 +21,11 @@ import sliders04 from "./sliders-04.svg";
 import loading from "./loading.png";
 import background from "./background.jpg";
 
-import curve from "./hero/curve.png";
-import robot from "./hero/robot.jpg";
+
+import curveimg from "./hero/curveimg.jpeg";
 import heroimg from "./hero/heroimg.png";
 import heroBackground from "./hero/hero-background.jpg";
-
+import curve from "./hero/curve.png";
 import curve1 from "./collaboration/curve-1.svg";
 import curve2 from "./collaboration/curve-2.svg";
 import discord from "./collaboration/discord.png";
@@ -84,7 +84,7 @@ export {
   brainwaveSymbol,
   brainwaveWhiteSymbol,
   play,
-  gradient,
+  // gradient,
   smallSphere,
   grid,
   yourlogo,
@@ -100,7 +100,7 @@ export {
   loading,
   background,
   curve,
-  robot,
+  curveimg,
   heroimg,
   heroBackground,
   curve1,

@@ -36,6 +36,7 @@ import Admin from "./scenes/Admin";
 import Heatmap from "./scenes/Heatmap";
 import PowerPrediction from "./scenes/PowerPrediction";
 import Fault from "./scenes/Fault";
+import Faq from "./components/Faq"
 
 // Landing page component
 const LandingPage = () => {
@@ -47,6 +48,7 @@ const LandingPage = () => {
         <Benefits />
         <Collaboration />
         <Services />
+        <Faq />
         <Footer />
       </div>
       <ButtonGradient />
