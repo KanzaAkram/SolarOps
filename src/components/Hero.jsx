@@ -213,6 +213,7 @@ const Hero = () => {
               width={2000}
               height={3500}
               alt="hero"
+              style={{ opacity: 0.3 }} // Adjust the opacity value as needed
             />
           </div>
           <BackgroundCircles />
