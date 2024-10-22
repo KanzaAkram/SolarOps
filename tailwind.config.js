@@ -26,7 +26,7 @@ export default {
           5: "#FF9E1B", // Bright orange-yellow
           6: "#E68A00", // Deep orange
           7: "#CC7700", // Dark orange with some brownish hues
-          8: "#B36200", // Darker burnt orange
+          8: "#FF8C00", // Darker burnt orange
           9: "#A65402", // Rich orange-brown, deeper tone
           10: "#8F4500", // Dark burnt orange
           11: "#703300", // Deep reddish-brown, hint of orange

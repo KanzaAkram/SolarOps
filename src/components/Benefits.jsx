@@ -26,7 +26,7 @@ const Benefits = () => {
               <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem] pointer-events-none">
                 {/* Circular bordered image with orange border */}
                 <div className="flex justify-center mb-5">
-                  <div className="w-28 h-28 rounded-full border-4 border-orange-500 overflow-hidden">
+                  <div className="w-28 h-28 rounded-full border-4 border-gray-900 overflow-hidden">
                     <img
                       src={item.image}
                       alt={item.title}

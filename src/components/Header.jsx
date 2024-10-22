@@ -45,11 +45,11 @@ const Header = () => {
             src={brainwave}
             width={190}
             height={40}
-            alt="Brainwave"
+            alt="Solarops"
             className="inline-block -mx-15"
           />
           <span className="ml-1 text-white text-2xl font-extrabold font-sans">
-            Solar<span className="text-purple-400">Ops</span>
+            Solar<span className="text-gray-800">Ops</span>
           </span>
         </a>
 
