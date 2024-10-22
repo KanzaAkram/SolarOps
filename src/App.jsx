@@ -25,7 +25,7 @@ import Services from "./components/Services";
 // Import dashboard components
 import Layout from "./scenes/Layout";
 import UserManual from "./scenes/UserManual";
-import Admin from "./scenes/Admin";
+// import Admin from "./scenes/Admin";
 // import Weather from "./scenes/PowerPrediction";
 // import CO2Emission from "./scenes/CO2Emission";
 // import TrafficFlowMap from "./scenes/Heatmap";
@@ -66,7 +66,7 @@ const router = createBrowserRouter(
         <Route path="/heatmap" element={<Heatmap />} />
         <Route path="/powerprediction" element={<PowerPrediction />} />
         <Route path="/fault" element={<Fault />} />
-        <Route path="/admin" element={<Admin />} />
+        {/* <Route path="/admin" element={<Admin />} /> */}
       </Route>
     </>
   )
