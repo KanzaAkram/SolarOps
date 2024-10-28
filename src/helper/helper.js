@@ -1,37 +1,46 @@
-import Axios from "axios";
-Axios.defaults.baseURL = import.meta.env.VITE_REACT_APP_SERVER_DOMAIN;
+// import Axios from "axios";
 
-export async function SignUp(credentials) {
+// Axios.defaults.baseURL =
+//   import.meta.env.VITE_REACT_APP_SERVER_DOMAIN || "http://localhost:5000";
+
+// export async function fetchPrediction(imageFile) {
+//   try {
+//     const formData = new FormData();
+//     formData.append("file", imageFile); // Ensure imageFile is a valid File object
+
+//     const ngrokUrl = "https://afc0-35-202-134-154.ngrok-free.app/predict/";
+//     const response = await Axios.post(ngrokUrl, formData); // No need for Content-Type header
+
+//     console.log("Prediction response:", response.data);
+//     return response.data; // Return the response data directly
+//   } catch (error) {
+//     console.error("Error details:", error.response?.data.detail || error);
+//     throw new Error(error.response?.data?.error || "Prediction failed");
+//   }
+// }
+
+
+// helper.js
+export const fetchPrediction = async (formData) => {
   try {
-    const { data: { msg } } = await Axios.post('/api/register', credentials);
-    return Promise.resolve(msg);
+    const response = await fetch(
+      "https://afc0-35-202-134-154.ngrok-free.app/predict",
+      {
+        // Replace with your ngrok URL
+        method: "POST",
+        body: formData,
+      }
+    );
+
+    if (!response.ok) {
+      // Throw an error with the status code for better debugging
+      throw new Error(`Server responded with status ${response.status}`);
+    }
+
+    // Parse the JSON response from the server
+    return await response.json();
   } catch (error) {
-    return Promise.reject({ error });
+    console.error("Error details:", error);
+    throw error;
   }
-}
-
-export async function loginUser(credentials) {
-  try {
-    const { data } = await Axios.post('/api/login', credentials);
-    
-    // Store user info in sessionStorage
-    sessionStorage.setItem('user', JSON.stringify(data.user));
-    
-    return Promise.resolve({ msg: data.msg });
-  } catch (error) {
-    return Promise.reject({ error: error.response.data.error });
-  }
-}
-
-// Function to fetch prediction data
-export async function fetchPrediction(data) {
-  try {
-    const response = await Axios.post('https://adef-35-233-243-168.ngrok-free.app/predict/gb', data);
-    console.log(response.data);
-    return Promise.resolve(response.data);
-  } catch (error) {
-    return Promise.reject({ error: error.response.data.error });
-  }
-}
-
-
+};
