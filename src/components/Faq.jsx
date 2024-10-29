@@ -31,7 +31,9 @@ const FAQComponent = () => {
   };
 
   return (
-    <div style={styles.faqContainer}>
+    <div id="faq" style={styles.faqContainer}>
+      {" "}
+      {/* Added id="faq" */}
       <h1 style={styles.mainHeading}>SolarOps: Frequently Asked Questions</h1>
       {faqs.map((faq, index) => (
         <div key={index} style={styles.faqItem}>
@@ -57,7 +59,7 @@ const styles = {
   },
   mainHeading: {
     color: "gold",
-    fontweight:"bold",
+    fontWeight: "bold",
     textAlign: "center",
     fontSize: "36px",
     marginBottom: "40px",
