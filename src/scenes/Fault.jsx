@@ -374,22 +374,20 @@
 
 // export default Fault;
 
-
-
 import React, { useState } from "react";
 import styled from "styled-components";
 import "./Fault.css";
 import image1 from "../assets/fault/image-1.jpeg";
-import image2 from "../assets/fault/image-2.png";
-import image3 from "../assets/fault/image-3.png";
+import image3 from "../assets/fault/image-3.jpg";
 import image4 from "../assets/fault/image-4.png";
 import { fetchPrediction } from "../helper/helper"; // Ensure this path is correct
 
-// Styled components for fancy upload UI and prediction card
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
 `;
 
 const UploadButton = styled.label`
@@ -401,26 +399,31 @@ const UploadButton = styled.label`
   border-radius: 8px;
   cursor: pointer;
   margin-top: 1.5rem;
-  transition: background-color 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 
   &:hover {
     background-color: #ff4500;
+    color: white;
+    transform: scale(1.05);
   }
 `;
 
 const SubmitButton = styled.button`
   padding: 0.8rem 1.5rem;
   color: white;
-  background-color: #28a745;
+  background-color: green;
   font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
   margin-top: 1rem;
-  transition: background-color 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
   border: none;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 
   &:hover {
-    background-color: #218838;
+    background-color: #ff4500;
+    transform: scale(1.05);
   }
 `;
 
@@ -436,44 +439,130 @@ const Card = styled.div`
   min-height: 400px;
   background-color: #ffd966;
   border-radius: 10px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
   text-align: center;
+  animation: fadeIn 0.6s ease-out;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `;
 
 const ImagePreview = styled.img`
   width: 100%;
   border-radius: 10px;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 `;
 
 const Title = styled.h2`
-  color: #333;
+  color: black;
+  font-weight: bold;
+  font-size: 1.6rem;
 `;
 
 const Confidence = styled.p`
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: bold;
-  color: #28a745;
+  color: green;
+  margin-top: 1rem;
 `;
 
 const Recommendations = styled.div`
   text-align: left;
   margin-top: 1rem;
+  color: #ff4500;
+  font-weight: bold;
+  font-size: 1.2rem;
 `;
 
 const List = styled.ul`
   margin: 0.5rem 0;
   padding-left: 1.2rem;
   list-style-type: square;
+  color: black;
 `;
 
 const ListItem = styled.li`
   font-size: 0.95rem;
-  color: #555;
+  color: black;
+`;
+const Heading = styled.h1`
+  color: orange;
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  animation: fadeInDown 0.5s ease-out;
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+`;
+
+const StepContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+`;
+
+const StepImage = styled.div`
+  position: relative;
+  text-align: center;
+  margin: 0 1rem;
+
+  img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid orange;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  p {
+    color: orange;
+    font-weight: bold;
+    margin-top: 0.5rem;
+  }
+`;
+
+const Arrow = styled.div`
+  color: orange;
+  font-size: 2rem;
+  margin: 0 1rem;
+  transform: rotate(90deg);
+  animation: bounce 1s infinite;
+
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0) rotate(90deg);
+    }
+    50% {
+      transform: translateY(-10px) rotate(90deg);
+    }
+  }
 `;
 
 const InfoText = styled.div`
-  color: #ff7f50;
+  color: red;
   font-weight: bold;
   margin-top: 1rem;
   text-align: center;
@@ -507,37 +596,11 @@ const PredictionCard = ({
   </Card>
 );
 
-// Styled components for the image grid
-const GridContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px; /* Adjust gap between grid items */
-  margin: 2rem 0;
-`;
-
-const GridItem = styled.div`
-  position: relative;
-`;
-
-const ImageGrid = ({ images }) => (
-  <GridContainer>
-    {images.map((img, index) => (
-      <GridItem key={index}>
-        <img
-          src={img}
-          alt={`Grid Image ${index + 1}`}
-          style={{ width: "100%", borderRadius: "10px" }}
-        />
-      </GridItem>
-    ))}
-  </GridContainer>
-);
-
 const Fault = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [predictionData, setPredictionData] = useState(null);
   const [imageFile, setImageFile] = useState(null);
-  const [error, setError] = useState(null); // State for error handling
+  const [error, setError] = useState(null);
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -545,27 +608,20 @@ const Fault = () => {
 
     setSelectedImage(URL.createObjectURL(file));
     setImageFile(file);
-    setError(null); // Reset error on image change
+    setError(null);
   };
 
   const handleSubmit = async () => {
     if (!imageFile) {
-      setError("Please select an image to upload."); // Update error message
+      setError("Please select an image to upload.");
       return;
     }
 
-    // Create FormData here
     const formData = new FormData();
-    formData.append("file", imageFile); // Append the file correctly
-
-    // Debugging: Log FormData contents
-    for (let pair of formData.entries()) {
-      console.log(`${pair[0]}: ${pair[1]}`);
-    }
+    formData.append("file", imageFile);
 
     try {
-      const response = await fetchPrediction(formData); // Send FormData
-      // Check if response is valid before using it
+      const response = await fetchPrediction(formData);
       if (response) {
         setPredictionData({
           faultType: response.predicted_class,
@@ -577,13 +633,25 @@ const Fault = () => {
         throw new Error("Invalid response from server.");
       }
     } catch (error) {
-      console.error(error); // Log error details for debugging
-      setError("Prediction failed: " + (error.message || "Unknown error")); // Update error state
+      console.error(error);
+      setError("Prediction failed: " + (error.message || "Unknown error"));
     }
   };
 
   return (
     <Container>
+      <Heading>Solar Panel Fault Prediction</Heading>
+      <StepContainer>
+        <StepImage>
+          <img src={image1} alt="Step 1" />
+          <p>Step 1: Upload Image</p>
+        </StepImage>
+        <Arrow>→</Arrow>
+        <StepImage>
+          <img src={image3} alt="Step 2" />
+          <p>Step 2: Get Predictions</p>
+        </StepImage>
+      </StepContainer>
       <UploadButton htmlFor="file-upload">
         Upload Your Faulty Solar Panel Image
       </UploadButton>
@@ -598,7 +666,7 @@ const Fault = () => {
           Submit for Prediction
         </SubmitButton>
       )}
-      {error && <InfoText>{error}</InfoText>} {/* Display error message */}
+      {error && <InfoText>{error}</InfoText>}
       {selectedImage && predictionData && (
         <PredictionCard
           image={selectedImage}
@@ -608,7 +676,6 @@ const Fault = () => {
           tips={predictionData.tips}
         />
       )}
-      <ImageGrid images={[image1, image2, image3, image4]} />
     </Container>
   );
 };

@@ -1,105 +1,79 @@
-/* src/Fault.css */
-
 .square-window {
-    width: 420px; /* Adjusted width of the main square */
-    height: 420px; /* Adjusted height of the main square */
-    border: 2px solid #333; /* Border of the main square */
+    width: 420px;
+    height: 420px;
+    border: 2px solid black;
     position: relative;
-    margin: 20px auto; /* Center the window */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow */
-    transition: transform 0.3s; /* Add a hover effect */
+    margin: 20px auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+    background-color: #ffd966;
 }
 
 .square-window:hover {
-    transform: scale(1.05); /* Scale on hover */
-}
-
-.square-window::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 4px;
-    background-color: #333; /* Underline color */
+    transform: scale(1.05);
 }
 
 .inner-squares {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    grid-template-rows: repeat(2, 1fr); /* 2 rows */
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     height: 100%;
     width: 100%;
 }
 
 .square {
-    position: relative; /* Position for arrows */
     display: flex;
-    flex-direction: column; /* Allow stacking of info */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid #ccc; /* Border for inner squares */
-    margin: 10px; /* Space between inner squares */
-    transition: background-color 0.3s, transform 0.3s; /* Add hover effect */
-    padding: 1rem; /* Padding for inner squares */
-    border-radius: 15px; /* Curved box */
+    border: 1px solid #ccc;
+    margin: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+    padding: 1rem;
+    border-radius: 15px;
+    background-color: #ff4500;
 }
 
 .square:hover {
-    background-color: #ffd966; /* Change background on hover */
-    transform: translateY(-5px); /* Lift effect on hover */
+    background-color: #ffd966;
+    transform: translateY(-5px);
 }
 
 .square img {
-    width: 80%; /* Adjust image size */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px; /* Curved images */
+    width: 80%;
+    border-radius: 10px;
 }
 
 .info {
-    margin-top: 0.5rem; /* Space between image and info */
-    font-size: 1rem; /* Font size for the info text */
-    color: #333; /* Text color */
-    text-align: center; /* Center the text */
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: black;
+    text-align: center;
 }
 
 .arrow {
-    position: absolute;
-    font-size: 24px; /* Adjust arrow size */
-    color: #ff5722; /* Bright orange color for arrows */
-    transition: transform 0.3s; /* Add hover effect */
+    font-size: 24px;
+    color: #ff4500;
+    transition: transform 0.3s;
 }
-
-.square:nth-child(1) .arrow { top: 10px; right: 10px; }
-.square:nth-child(2) .arrow { bottom: 10px; right: 10px; }
-.square:nth-child(3) .arrow { bottom: 10px; left: 10px; }
-.square:nth-child(4) .arrow { top: 10px; left: 10px; }
 
 .square:hover .arrow {
-    transform: scale(1.2); /* Scale arrows on hover */
+    transform: scale(1.2);
 }
 
-/* Upload Button styles */
 label {
     display: inline-block;
-    background-color: #ffd966; /* Theme color */
-    color: white; /* Text color */
     padding: 10px 20px;
-    border-radius: 5px;
+    margin-top: 20px;
+    background-color: #ff4500;
+    color: #ff4500;
+    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 label:hover {
-    background-color: #f7c600; /* Slightly darker shade on hover */
+    background-color: #ffd966;
+    color: black;
 }
-
-/* Card styles */
-.card {
-    background-color: #ffd966; /* Theme color */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-}
-

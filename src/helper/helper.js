@@ -24,7 +24,7 @@
 export const fetchPrediction = async (formData) => {
   try {
     const response = await fetch(
-      "https://afc0-35-202-134-154.ngrok-free.app/predict",
+      "https://42ee-34-136-57-251.ngrok-free.app/predict",
       {
         // Replace with your ngrok URL
         method: "POST",
