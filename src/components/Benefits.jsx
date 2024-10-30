@@ -7,19 +7,27 @@ import ClipPath from "../assets/svg/ClipPath";
 const Benefits = () => {
   return (
     <Section id="features">
-      <div className="container relative z-2">
+      <div className="container relative z-2 text-center py-12">
         {/* Centering the heading */}
         <Heading
           className="md:max-w-md lg:max-w-2xl mx-auto text-center"
-          title="Optimize Solar Power Effortlessly with SolarOps"
+          title={
+            <span style={{ color: "#FFD966" }}>
+              Optimize Solar Power Effortlessly with SolarOps
+            </span>
+          }
         />
 
-        <div className="flex flex-wrap gap-8 mb-5"> {/* Adjusted gap and margin */}
-          {benefits.map((item) => (
+        <div className="flex flex-wrap gap-8 mb-5 justify-center">
+          {/* Map over the benefits array and position cards conditionally */}
+          {benefits.map((item, index) => (
             <div
-              className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem]"
+              className={`block relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem] ${
+                index >= benefits.length - 2 ? "flex-none" : ""
+              }`}
               style={{
                 backgroundImage: `url(${item.backgroundUrl})`,
+                marginRight: index === benefits.length - 2 ? "0.5rem" : "0",
               }}
               key={item.id}
             >
@@ -36,7 +44,7 @@ const Benefits = () => {
                 </div>
 
                 <h5 className="h5 mb-5">{item.title}</h5>
-                <p className="body-2 mb-6 text-n-3">{item.text}</p>
+                <p className="body-2 mb-6 text-n-1">{item.text}</p>
                 <div className="flex items-center mt-auto"></div>
               </div>
 
@@ -70,4 +78,3 @@ const Benefits = () => {
 };
 
 export default Benefits;
-

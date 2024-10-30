@@ -14,9 +14,13 @@ import Generating from "./Generating";
 const Services = () => {
   return (
     <Section id="how-to-use">
-      <div className="container">
+      <div className="container py-6">
         <Heading
-          title="Maximizing Solar Power Efficiency"
+          title={
+            <span className="text-yellow-300">
+              Maximizing Solar Power Efficiency
+            </span>
+          }
           text="Optimize grid placement and boost energy output with intelligent insights from SolarOps"
         />
 
@@ -33,7 +37,7 @@ const Services = () => {
             </div>
 
             <div className="relative z-1 max-w-[17rem] ml-auto">
-              <h4 className="h4 mb-4">Power Generation Prediction</h4>
+              <h4 className="h4 mb-4 text-n-6">Power Generation Prediction</h4>
               <p className="body-2 mb-[3rem] text-n-3">
                 Accurate solar power predictions to optimize energy production.
               </p>

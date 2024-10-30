@@ -55,7 +55,7 @@ const styles = {
   faqContainer: {
     width: "80%",
     margin: "0 auto",
-    paddingTop: "20px",
+    paddingTop: "90px",
   },
   mainHeading: {
     color: "gold",
