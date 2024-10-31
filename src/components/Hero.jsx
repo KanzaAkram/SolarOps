@@ -28,7 +28,7 @@ const Hero = () => {
           <div className="lg:w-1/2 text-left mb-8 lg:mb-0 lg:mr-20">
             {" "}
             {/* Added margin-right for spacing */}
-            <h1 className="h1 mb-6 mt-6 ml-10 text-left text-yellow-300">
+            <h1 className="h1 mb-6 mt-6 ml-10 text-left text-yellow-400">
               {" "}
               {/* Centered to the left */}
               Empower Your Solar Grid Management&nbsp;with {` `}
@@ -111,7 +111,7 @@ const Hero = () => {
               width={2000}
               height={3500}
               alt="hero"
-              style={{ opacity: 0.6 }} // Adjust the opacity value as needed
+              style={{ opacity: 0.4 }} // Adjust the opacity value as needed
             />
           </div>
           <BackgroundCircles />
