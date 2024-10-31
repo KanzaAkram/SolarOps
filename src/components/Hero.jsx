@@ -6,7 +6,7 @@ import { BackgroundCircles, BottomLine, Gradient } from "./design/Hero";
 import { heroIcons } from "../constants";
 import { ScrollParallax } from "react-just-parallax";
 import { useRef } from "react";
-import Generating from "./Generating";
+// import Generating from "./Generating";
 import Notification from "./Notification";
 import CompanyLogos from "./CompanyLogos";
 
@@ -50,7 +50,7 @@ const Hero = () => {
             <div className="flex justify-center px-20 my-14 ml-20">
               {" "}
               {/* Centering the button */}
-              <Button href="/pricing" white >
+              <Button href="/pricing" white>
                 Find Best Installation Sites Now
               </Button>
             </div>
@@ -83,7 +83,8 @@ const Hero = () => {
                   height={490}
                   alt="AI"
                 />
-                <Generating className="absolute left-4 right-4 bottom-5 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2" />
+                {/* <Generating className="absolute left-4 right-4 bottom-32 md:left-1/2 md:right-auto md:bottom-20 md:w-[31rem] md:-translate-x-1/2" /> */}
+
                 <ScrollParallax isAbsolutelyPositioned>
                   <ul className="hidden absolute -left-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-2xl xl:flex">
                     {heroIcons.map((icon, index) => (
@@ -110,7 +111,7 @@ const Hero = () => {
               width={2000}
               height={3500}
               alt="hero"
-              style={{ opacity: 0.3 }} // Adjust the opacity value as needed
+              style={{ opacity: 0.6 }} // Adjust the opacity value as needed
             />
           </div>
           <BackgroundCircles />
