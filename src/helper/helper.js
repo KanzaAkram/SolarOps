@@ -19,12 +19,11 @@
 //   }
 // }
 
-
 // helper.js
 export const fetchPrediction = async (formData) => {
   try {
     const response = await fetch(
-      "https://42ee-34-136-57-251.ngrok-free.app/predict",
+      "https://faultdetmodel-production.up.railway.app/predict/",
       {
         // Replace with your ngrok URL
         method: "POST",
